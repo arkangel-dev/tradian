@@ -3,7 +3,27 @@
 @tailwind utilities;
 
 
-#root {
+#root, body,html {
     background-color: #eff1f3;
-    height: 100dvh
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.getreadyft {
+    background: linear-gradient(339.06deg,#a2a1e926 7.33%,#5898bb1e 41.36%,#ff373726 79.12%);
+    max-width: var(--container-width);
+    @apply mt-10 p-10 flex-1 rounded-xl flex items-center flex-col
+}
+.getreadyft h1 {
+    font-size: 4rem;
+    font-family: 'Pacifico';
+    color: #3c162e;
+    text-align: center;
+}
+
+.getreadyft p {
+    text-align: center;
+    width: 75%;
+    @apply mt-10;
 }

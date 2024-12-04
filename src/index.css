@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&family=Saira+Stencil+One&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --primary-red: #c61818;
+    --container-width: calc(100dvw - 30rem)
+}
+
+body {
+    font-family: "Inter";
+}
+
+
+@media screen and (max-width: 700px) {
+
+    :root {
+        --container-width: calc(100dvw - 10rem)
+    }
+}
+
+.r-container {
+    max-width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

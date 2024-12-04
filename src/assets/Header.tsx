@@ -4,7 +4,7 @@ import animationData from './tradian-logo-dark.json'
 
 function Header() {
     const defaultOptions = {
-        loop: true,
+        loop: false,
         autoplay: true,
         animationData: animationData,
         rendererSettings: {
@@ -13,8 +13,8 @@ function Header() {
     };
 
     return (
-        <div className="navbar">
-            <div className='container'>
+        <div className="r-container">
+            <div className='navbar'>
                 <div className="logo">
                     <Lottie options={defaultOptions}
                         width={150}

@@ -4,23 +4,15 @@
 
 
 
-:root {
-    --primary-red: #c61818;
-    --container-width: calc(100dvw - 30rem)
-}
 .navbar {
     align-items: center;
-    padding: 0rem 10rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex: 1 1 0;
+    max-width: var(--container-width);
 }
 
-.container {
-    max-width: var(--container-width);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+
 
 .navbar .buttons {
     display: flex;
@@ -42,9 +34,6 @@
     font-weight: 600;
 }
 
-.navbar {
-    background: #f6f6f6;
-}
 
 .login > button {
     @apply  bg-red-700

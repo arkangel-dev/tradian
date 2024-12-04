@@ -1,0 +1,105 @@
+.footer {
+    background-color: #3c162e;
+    display: flex;
+    justify-content: center;
+    @apply py-10
+}
+
+.link-list {
+    font-weight: 400;
+    font-size: .9rem;
+    color: #ffe0e0;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.link-list li:first-child {
+
+    font-weight: 500;
+    color: #ffc7c7
+}
+
+.link-list-container {
+    display: flex;
+    gap: 5rem;
+}
+
+.footer-container {
+    max-width: calc(var(--container-width) + 0rem);
+    width: 100%;
+}
+
+.link-row {
+    @apply px-3 flex justify-between flex-col lg:flex-row lg:items-start items-center gap-10
+}
+
+.link-row img {
+    width: 12rem;
+    border-radius: .5rem;
+}
+
+.subscribe {
+    background: #441f38;
+    @apply flex-col lg:flex-row p-6 px-7 flex flex-1 w-full mb-10
+}
+
+.subscribe-title h1 {
+    color: #ffc7c7;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.subscribe-title h2 {
+    color: #fff1f1;
+    font-size: .9rem;
+}
+
+.subscribe .subscribe-title {
+    flex: 1 1 0;
+}
+
+.subscribe .enter-email {
+    flex: 1 1 0;
+}
+
+.enter-email {
+    
+    border-radius: .5rem 0px 0px .5rem;
+    @apply flex text-clip overflow-clip h-fit
+
+}
+
+
+
+.enter-email input {
+    flex: 1 1 auto;
+    @apply p-2 pl-3
+}
+
+.enter-email button {
+    background: #1f0e0a;
+    color: #ffc7c7;
+    border-radius: 0px .5rem .5rem 0px;
+    @apply px-5 text-sm font-medium
+}
+
+.logo-social ul {
+    color: #ffc7c7;
+    gap: 1rem;
+    @apply flex text-xs
+}
+
+.logo-social {
+    @apply mt-5 flex justify-between flex-row align-middle w-full
+}
+
+.line {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.164);
+    @apply my-4
+}
+
+.credits {
+    @apply flex justify-between text-gray-300 text-xs
+}
