@@ -3,44 +3,27 @@
 @tailwind utilities;
 
 
-
-.navbar {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    flex: 1 1 0;
-    max-width: var(--container-width);
+.navcontainer {
+    @apply sticky top-0 bg-[#f6f6f6] z-50
 }
 
-
+.navbar {
+    @apply w-full max-w-[--container-width] flex-1 justify-between flex items-center my-3;
+}
 
 .navbar .buttons {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-
-
+    @apply flex items-center gap-2
 }
 
 .navbar .buttons a {
-    padding: 1.5rem 1.5rem;
-    @apply hover:bg-slate-200
-        transition-all
-        rounded-md
+    @apply hover:bg-slate-200 transition-all rounded-md p-6
 }
 
 .navbar .buttons {
-    color: #252529;
-    font-weight: 600;
+    @apply hidden md:block font-semibold text-[#252529]
 }
 
 
-.login > button {
-    @apply  bg-red-700
-            hover:bg-red-600 
-            aria-pressed:bg-red-500 
-            text-white 
-            px-5 py-2 
-            font-semibold 
-            rounded-full
+.login>button {
+    @apply bg-red-700 hover:bg-red-600 aria-pressed:bg-red-500 text-white px-5 py-2 font-semibold rounded-full
 }

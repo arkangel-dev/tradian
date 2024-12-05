@@ -13,7 +13,7 @@ function Header() {
     };
 
     return (
-        <div className="r-container">
+        <div className="r-container navcontainer">
             <div className='navbar'>
                 <div className="logo">
                     <Lottie options={defaultOptions}
