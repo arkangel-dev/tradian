@@ -1,8 +1,8 @@
 import './App.css'
-import Header from './assets/Header.tsx'
-import Footer from './assets/Footer.tsx'
-import Button from './assets/Button.tsx'
-import SearchContainer from './components/SearchContainer.tsx'
+import Header from './assets/Header.jsx'
+import Footer from './assets/Footer.jsx'
+import Button from './assets/Button.jsx'
+import SearchContainer from './components/SearchContainer.jsx'
 
 
 function App() {

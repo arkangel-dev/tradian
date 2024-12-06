@@ -8,15 +8,18 @@ import axios from "axios"
 
 function Footer() {
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(false);
-    
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         axios
-        .get('https://localhost:7094/Footer')
-        .then((response) => setData(response.data))
-        .finally(() => setLoading(true));
-    })
+            .get('https://localhost:7094/Footer')
+            .then((response) => {
+                console.log(response.data)
+                setData(response.data)
+            })
+            .finally(() => setLoading(false));
+    }, [])
 
     const defaultOptions = {
         loop: false,
@@ -43,26 +46,22 @@ function Footer() {
                     </div>
                     <div className="link-row">
                         <div className="link-list-container">
-                            
-                            {/* <ul className="link-list">
-                                <li>Quick Links</li>
-                                <li>oneGov</li>
-                                <li>Tradenet</li>
-                            </ul>
+                            {!loading &&
+                                <>
+                                    {data.map((item) => (
+                                        <ul key={item.id} className="link-list">
+                                            <li>{item.section}</li>
 
-                            <ul className="link-list">
-                                <li>Logistics</li>
-                                <li>Vessels</li>
-                                <li>Shipping Agents</li>
-                                <li>Freight Forwarders</li>
-                                <li>Courier Agents</li>
-                                <li>Brokers</li>
-                            </ul>
+                                            {item.links.map((link) => (
+                                                <li key={link.id} >
+                                                    <a href={link.link}>{link.value}</a>
+                                                </li>
+                                            ))}
 
-                            <ul className="link-list">
-                                <li>Terms and Policies</li>
-                                <li>Terms and Conditions</li>
-                            </ul> */}
+                                        </ul>
+                                    ))}
+                                </>
+                            }
                         </div>
 
                         <div>

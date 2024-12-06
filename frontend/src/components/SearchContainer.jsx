@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { InboxDownloadIcon, Location05Icon } from 'hugeicons-react';
-import Button from '../assets/Button.tsx';
+import Button from '../assets/Button.jsx';
 import './SearchContainer.css';
 
 function SearchContainer() {

@@ -1,6 +1,6 @@
 import './Button.css'
 
-function Button({title}: {title: string}) {
+function Button({title}) {
     return (
         <button>{title}</button>
     )
