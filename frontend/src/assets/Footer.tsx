@@ -3,8 +3,21 @@ import { Facebook02Icon, InstagramIcon, TwitterIcon } from "hugeicons-react"
 
 import animationData from './tradian-logo-light.json'
 import Lottie from 'react-lottie'
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 function Footer() {
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(false);
+    
+
+    useEffect(() => {
+        axios
+        .get('https://localhost:7094/Footer')
+        .then((response) => setData(response.data))
+        .finally(() => setLoading(true));
+    })
+
     const defaultOptions = {
         loop: false,
         autoplay: true,
@@ -30,7 +43,8 @@ function Footer() {
                     </div>
                     <div className="link-row">
                         <div className="link-list-container">
-                            <ul className="link-list">
+                            
+                            {/* <ul className="link-list">
                                 <li>Quick Links</li>
                                 <li>oneGov</li>
                                 <li>Tradenet</li>
@@ -48,7 +62,7 @@ function Footer() {
                             <ul className="link-list">
                                 <li>Terms and Policies</li>
                                 <li>Terms and Conditions</li>
-                            </ul>
+                            </ul> */}
                         </div>
 
                         <div>
