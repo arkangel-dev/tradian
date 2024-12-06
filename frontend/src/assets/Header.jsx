@@ -25,6 +25,7 @@ function Header() {
                     <a>Business</a>
                     <a>Individual</a>
                     <a>Support</a>
+                    <a>Super Secrets</a>
                 </div>
                 <div className="login">
                     <button>Login</button>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { InboxDownloadIcon, Location05Icon } from 'hugeicons-react';
 import Button from '../assets/Button.jsx';
 import './SearchContainer.css';
+import toast from 'react-hot-toast';
 
 function SearchContainer() {
     const [isCheckDeclarationMode, setIsCheckDeclarationMode] = useState(true);
@@ -15,6 +16,10 @@ function SearchContainer() {
 
     const switchToContainerTracking = () =>
         setIsCheckDeclarationMode(false);
+
+    const onNotImplementedFunction = () => {
+        toast.error("This feature is not implemented yet! Come back soon");
+    }
 
     const view = isCheckDeclarationMode ? (
         <>
@@ -37,7 +42,7 @@ function SearchContainer() {
                         onChange={(e) => setRNumber(e.target.value)}
                         placeholder="R/1234/00MP" />
                 </div>
-                <Button title="Search" />
+                <Button onClick={onNotImplementedFunction} title="Search" />
             </div>
         </>
     ) : (
@@ -54,7 +59,7 @@ function SearchContainer() {
                         onChange={(e) => setContainerId(e.target.value)}
                         placeholder="Container ID" />
                 </div>
-                <Button title="Track" />
+                <Button onClick={onNotImplementedFunction} title="Track" />
             </div>
         </>
     );

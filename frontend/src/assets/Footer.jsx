@@ -16,9 +16,9 @@ function Footer() {
             .get('https://localhost:7094/Footer')
             .then((response) => {
                 console.log(response.data)
-                setData(response.data)
-            })
-            .finally(() => setLoading(false));
+                setData(response.data);
+                setLoading(false)
+            });
     }, [])
 
     const defaultOptions = {
