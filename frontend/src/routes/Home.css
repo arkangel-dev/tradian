@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 
 #root, body,html {
@@ -11,7 +9,7 @@
 }
 
 .getreadyft {
-    background: linear-gradient(339.06deg,#a2a1e926 7.33%,#5898bb1e 41.36%,#ff373726 79.12%);
+    background: linear-gradient(339.06deg, #8741ae33 7.33%, #9655d34a 41.36%, #9a37ff26 79.12%);
     max-width: var();
     @apply relative  lg:mt-10 p-0 md:p-10  flex-1 lg:rounded-xl flex items-center flex-col pb-0 max-w-[unset] md:max-w-[--container-width]
 }

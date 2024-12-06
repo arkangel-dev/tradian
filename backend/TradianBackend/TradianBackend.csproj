@@ -23,4 +23,14 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Posts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Posts\post1.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

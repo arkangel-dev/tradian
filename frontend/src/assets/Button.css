@@ -1,4 +1,4 @@
-button {
+.c-button {
     @apply  bg-red-700
             hover:bg-red-600 
             aria-pressed:bg-red-500 

@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&family=Saira+Stencil+One&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+
 
 :root {
     --primary-red: #c61818;
     --deep-purple: #3c162e;
     --light-pink: #fff1f1;
-    --container-width: calc(100dvw - 40rem)
+    --container-width: calc(100dvw - 45dvw)
 }
 
 

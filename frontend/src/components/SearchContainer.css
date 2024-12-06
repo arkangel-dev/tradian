@@ -43,9 +43,8 @@
 }
 
 .button-toggle button {
-    background: transparent;
     color: var(--deep-purple);
-    @apply flex gap-5 py-3 hover:bg-transparent text-sm items-center justify-center
+    @apply flex bg-transparent gap-3 py-3 hover:bg-transparent text-sm items-center justify-center px-7 rounded-full
 }
 
 .button-toggle button.active {

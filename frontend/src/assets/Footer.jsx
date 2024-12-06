@@ -1,6 +1,7 @@
 import "./Footer.css"
 import { Facebook02Icon, InstagramIcon, TwitterIcon } from "hugeicons-react"
 
+import toast from 'react-hot-toast';
 import animationData from './tradian-logo-light.json'
 import Lottie from 'react-lottie'
 import { useEffect, useState } from "react"
@@ -15,7 +16,6 @@ function Footer() {
         axios
             .get('https://localhost:7094/Footer')
             .then((response) => {
-                console.log(response.data)
                 setData(response.data);
                 setLoading(false)
             });
@@ -32,6 +32,7 @@ function Footer() {
 
     return (
         <>
+            <div className="space-gen"></div>
             <div className="footer">
                 <div className="footer-container">
                     <div className="subscribe">
@@ -41,7 +42,7 @@ function Footer() {
                         </div>
                         <div className="enter-email">
                             <input placeholder="Enter your email" />
-                            <button>Subscribe now</button>
+                            <button onClick={() => toast.error("Not implemented yet either!")}>Subscribe now</button>
                         </div>
                     </div>
                     <div className="link-row">
@@ -70,15 +71,17 @@ function Footer() {
                     </div>
                     <div className="logo-social">
                         <div>
-                            <Lottie options={defaultOptions}
-                                width={150}
-                                isStopped={true}
-                                isPaused={true} />
+                            <a href="/">
+                                <Lottie options={defaultOptions}
+                                    width={150}
+                                    isStopped={true}
+                                    isPaused={true} />
+                            </a>
                         </div>
                         <ul>
-                            <li><Facebook02Icon /></li>
-                            <li><InstagramIcon /></li>
-                            <li><TwitterIcon /></li>
+                            <a href="https://facebook.com"><Facebook02Icon /></a>
+                            <a href="https://instagram.com"><InstagramIcon /></a>
+                            <a href="https://bsky.app/"><TwitterIcon /></a>
                         </ul>
                     </div>
                     <div className="line"></div>
