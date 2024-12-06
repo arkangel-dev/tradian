@@ -13,18 +13,18 @@
 .getreadyft {
     background: linear-gradient(339.06deg,#a2a1e926 7.33%,#5898bb1e 41.36%,#ff373726 79.12%);
     max-width: var();
-    @apply relative mt-10 p-10 pt-20 flex-1 rounded-xl flex items-center flex-col pb-0 max-w-[unset] md:max-w-[--container-width]
+    @apply relative  lg:mt-10 p-0 md:p-10  flex-1 lg:rounded-xl flex items-center flex-col pb-0 max-w-[unset] md:max-w-[--container-width]
 }
 
 .getreadyft .logo {
-    @apply absolute top-0 right-0 w-full w-48
+    @apply absolute top-0 right-0 w-48 hidden 2xl:block
 }
 
 .getreadyft h1 {
-    font-size: 5rem;
     font-family: 'Pacifico';
     color: #3c162e;
     text-align: center;
+    @apply pt-10 text-5xl lg:text-[5rem] w-3/4
 }
 
 .getreadyft p {

@@ -22,7 +22,9 @@
 
 .link-list-container {
     display: flex;
-    gap: 5rem;
+    /* gap: 5rem; */
+
+    @apply justify-between gap-5 md:gap-20;
 }
 
 .footer-container {
@@ -41,7 +43,7 @@
 
 .subscribe {
     background: #441f38;
-    @apply flex-col lg:flex-row p-6 px-7 flex flex-1 w-full mb-10
+    @apply flex-col lg:flex-row p-6 px-7 flex-1 w-full mb-10 hidden md:flex rounded-lg
 }
 
 .subscribe-title h1 {

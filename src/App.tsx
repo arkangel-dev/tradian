@@ -14,7 +14,7 @@ function App() {
 
       <div className='r-container relative'>
         <div className='getreadyft'>
-          <img className='logo hidden lg:block' src='./download.svg'/>
+          <img className='logo' src='./download.svg'/>
           <h1>Get Ready for Tradian!</h1>
           <p>Phase 1 of Tradian is coming in November. Join our training sessions to master the platform and seamlessly transition your import and export operations to Tradian.</p>
 

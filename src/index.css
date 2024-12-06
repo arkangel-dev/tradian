@@ -11,6 +11,7 @@
     --container-width: calc(100dvw - 40rem)
 }
 
+
 @media screen and (max-width: 1500px) {
     :root {
         --container-width: calc(100dvw - 10rem)
