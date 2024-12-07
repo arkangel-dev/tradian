@@ -21,23 +21,24 @@ services:
             dockerfile: Dockerfile
         image: tradian-frontend
         container_name: tradian-frontend
-        # ports:
-            # - "7207:7207" # Map host port 8080 to container port 80
         environment:
             - ENV=production
             - DEBUG=false
-        # volumes:
-        #     - ./data/backend:/var/data
-        #     - ./data/backend/appsettings.json:/app/appsettings.json
+
+        ports:
+            - "8015:80" # Map host port 80 to container port 80
+        volumes:
+            - ./data/nginx-logs:/var/log/nginx # Mount logs for easier debugging
+            
         restart: unless-stopped
 
-    nginx:
-        image: nginx:latest
-        ports:
-            - "8012:80" # Map host port 80 to container port 80
-        volumes:
-            - ./data/nginx.conf:/etc/nginx/nginx.conf:ro # Mount custom NGINX configuration
-            - ./data/nginx-logs:/var/log/nginx # Mount logs for easier debugging
+    # nginx:
+    #     image: nginx:latest
+    #     ports:
+    #         - "8012:80" # Map host port 80 to container port 80
+    #     volumes:
+    #         - ./data/nginx.conf:/etc/nginx/nginx.conf:ro # Mount custom NGINX configuration
+    #         - ./data/nginx-logs:/var/log/nginx # Mount logs for easier debugging
 
     postgres:
         image: postgres:15 # Use the latest version or specify your required version
