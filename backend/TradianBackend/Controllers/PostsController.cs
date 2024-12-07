@@ -4,7 +4,7 @@ using TradianBackend.Database;
 
 namespace TradianBackend.Controllers {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PostsController : ControllerBase {
 
         private readonly IConfiguration _configuration;
@@ -37,8 +37,8 @@ namespace TradianBackend.Controllers {
                 );
             }
 
-            //if (!HttpContext.User.Identity?.IsAuthenticated ?? false)
-            //    content = content.Where(x => !x.IsSecured);
+            if (!HttpContext.User.Identity?.IsAuthenticated ?? false)
+                content = content.Where(x => !x.IsSecured);
 
             var results = content.Select(x => new { x.Id, x.Title, x.Description, x.IsSecured }).Take(count);
             return Ok(new {

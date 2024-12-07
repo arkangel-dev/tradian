@@ -2,12 +2,13 @@
 using TradianBackend.Services;
 using TradianBackend.DtoModels;
 using TradianBackend.Database;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TradianBackend.Controllers {
 
 
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AuthenticationController : ControllerBase {
         private readonly JwtHelper _jwtHelper;
         private readonly DatabaseContext _dbcontext;
@@ -28,19 +29,26 @@ namespace TradianBackend.Controllers {
             if (user is null)
                 return Unauthorized(new { Message = "Invalid credentials" });
 
-
-            // Replace this with actual user validation
             var token = _jwtHelper.GenerateToken(loginModel.Username);
 
-            // Set token in a HttpOnly cookie
+
+
+            
+
             Response.Cookies.Append("AuthToken", token, new CookieOptions {
-                HttpOnly = true,
-                Secure   = true,
+                //HttpOnly = true,
+                //Secure   = true,
                 SameSite = SameSiteMode.Strict,
-                Expires  = DateTime.UtcNow.AddMinutes(60)
+                Expires  = DateTime.Now.AddMinutes(120)
             });
 
             return Ok(new { Message = "Login successful" });
+        }
+
+        [HttpGet("AmILoggedIn")]
+        [Authorize]
+        public IActionResult AmILoggedIn() {
+            return Ok();
         }
     }
 

@@ -5,7 +5,7 @@ import axios from "axios";
 import Markdown from "react-markdown";
 import toast from "react-hot-toast";
 import './PostListView.css'
-import { SquareUnlock01Icon, Cancel01Icon } from "hugeicons-react";
+import { SquareUnlock01Icon, Cancel01Icon, ArrowUpRight01Icon } from "hugeicons-react";
 import ScrollInFromSide from "../components/ScrollInFromSide"
 
 export default function PostView() {
@@ -42,15 +42,17 @@ export default function PostView() {
 
     const performSearch = () => {
         axios
-            .get(`https://localhost:7094/Posts?query=${currentSearchQueryStore}&count=${count}`)
+            .get(`/api/posts?query=${currentSearchQueryStore}&count=${count}`)
             .then((response) => {
-                console.log(response.data)
                 setData(response.data);
                 setLoading(false)
                 setDisplayLoadMore(count <= response.data.count)
+            })
+            .catch((error) => {
+                toast.error("Failed to fetch posts")
             });
     }
-    
+
     useEffect(performSearch, [count])
 
     return (
@@ -70,16 +72,20 @@ export default function PostView() {
                         <>
                             {data.results.map((item) => (
                                 <ScrollInFromSide key={item.id}>
-                                    <div className="PostListItem">
-                                        <a href={`posts/${item.id}`}><h1>{item.title}</h1></a>
-                                        {item.isSecured &&
-                                            <p className="post-tag">
-                                                <SquareUnlock01Icon />
-                                                Secret Membership Post
-                                            </p>
-                                        }
-                                        <p>{item.description}</p>
-                                    </div>
+                                    <a href={`posts/${item.id}`}>
+                                        <div className="PostListItem">
+                                            <h1>{item.title}</h1>
+                                            {item.isSecured &&
+                                                <p className="post-tag">
+                                                    <SquareUnlock01Icon />
+                                                    Secret Membership Post
+                                                </p>
+                                            }
+                                            <p>{item.description}</p>
+                                            <div className="flex-1"></div>
+                                            <p className="flex gap-2"><span className="underline underline-offset-1">Read the post</span><ArrowUpRight01Icon/></p>
+                                        </div>
+                                    </a>
                                 </ScrollInFromSide>
                             ))}
                         </>

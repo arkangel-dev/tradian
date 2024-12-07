@@ -27,7 +27,7 @@ function Home() {
           </div>
         </div>
   
-        <div className='mt-[10rem]'></div>
+        <div className='mt-[12rem]'></div>
         <PostListView/>
   
       </>

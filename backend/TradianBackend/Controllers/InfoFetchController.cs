@@ -4,7 +4,7 @@ using TradianBackend.Database;
 
 namespace TradianBackend.Controllers {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class InfoFetchController : ControllerBase {
 
 

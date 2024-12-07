@@ -14,7 +14,7 @@ export default function PostView() {
 
     useEffect(() => {
         axios
-            .get(`https://localhost:7094/Posts/${postid}`)
+            .get(`/api/posts/${postid}`)
             .then((response) => {
                 setData(response.data);
                 setLoading(false)
@@ -62,7 +62,6 @@ export default function PostView() {
     useEffect(() => {
         document.title = data?.title ?? "Loading"
     }, [data])
-
 
     return (
         <>

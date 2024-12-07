@@ -31,6 +31,7 @@
 }
 
 .quickLookup {
+    box-shadow: 0 58px 100px -24px #6d262638;
     @apply flex flex-col items-center px-8 pb-8 lg:px-20 lg:pb-20 mb-[-8rem] rounded-3xl  w-[85%] bg-[--deep-purple] 
 }
 

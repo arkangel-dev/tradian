@@ -4,7 +4,7 @@ using TradianBackend.Database;
 
 namespace TradianBackend.Controllers {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class FooterController : ControllerBase {
 
         DatabaseContext _context;
@@ -13,7 +13,7 @@ namespace TradianBackend.Controllers {
 
         }
 
-        [HttpGet] 
+        [HttpGet("GetFooterData")] 
         public IActionResult GetFooterLinks() {
             var results = _context
                 .FooterSections

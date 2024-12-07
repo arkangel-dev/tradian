@@ -14,7 +14,7 @@ function Footer() {
 
     useEffect(() => {
         axios
-            .get('https://localhost:7094/Footer')
+            .get('/api/footer/getfooterdata')
             .then((response) => {
                 setData(response.data);
                 setLoading(false)
@@ -66,7 +66,7 @@ function Footer() {
                         </div>
 
                         <div>
-                            <img src="./bml.5aEfgva9.png" />
+                            <img src="/bml.5aEfgva9.png" />
                         </div>
                     </div>
                     <div className="logo-social">
