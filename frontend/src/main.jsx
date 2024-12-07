@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import './index.css'
 import { createRoot } from 'react-dom/client';
 
-import Home from './routes/home.jsx';
+import Home from './routes/homed.jsx';
 import Secrets from './routes/Secrets.jsx';
 
 import PostView from './routes/Posts/PostView.jsx';
