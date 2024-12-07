@@ -24,6 +24,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Posts\page1.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Posts\page2.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Posts\page3.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Posts\post1.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
