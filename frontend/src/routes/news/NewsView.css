@@ -1,0 +1,78 @@
+:root {
+    --post-title-color: var(--deep-purple);
+}
+
+h1.PostTitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--deep-purple);
+    margin-bottom: 1rem;
+}
+
+.postContainer {
+    max-width: var(--container-width);
+    align-self: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .postContainer {
+        max-width: var(--container-width);
+    }
+}
+
+.PostContent h1 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: var(--post-title-color);
+}
+
+.PostContent h2 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    color: var(--post-title-color);
+}
+
+.PostContent h3 {
+    color: var(--post-title-color);
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.PostContent p {
+    margin-top: .5rem;
+    color: rgb(71, 71, 71);
+}
+
+.PostContent hr {
+    margin-top: 2rem;
+}
+
+.PostContent ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    gap: .5rem;
+}
+
+.PostContent em {
+    color: rgb(136, 136, 136)
+}
+
+.PostContent blockquote {
+    margin-top: .5rem;
+    border-left: solid .35rem var(--deep-purple);
+    padding-left: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.PostContent blockquote p {
+    margin-top: 0px;
+    font-style: italic;
+    color: var(--deep-purple);
+    font-weight: 400;
+}

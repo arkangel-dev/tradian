@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Markdown from "react-markdown";
-import { NotFound, BackendIssue, AccessDenied, Loading } from "../components/StatusViews.jsx"
+import { NotFound, BackendIssue, AccessDenied, Loading } from "../../components/StatusViews"
 import './PostView.css'
 
 export default function PostView() {
@@ -14,7 +14,7 @@ export default function PostView() {
 
     useEffect(() => {
         axios
-            .get(`/api/posts/${postid}`)
+            .get(`/api/content/posts/${postid}`)
             .then((response) => {
                 setData(response.data);
                 setLoading(false)

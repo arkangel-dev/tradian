@@ -28,7 +28,7 @@ namespace TradianBackend.Controllers {
             _dbcontext.SaveChanges();
 
             _dbcontext.Logins.Add(new Database.Entities.Login() {
-                Name     = "Administrator",
+                Name = "Administrator",
                 Password = "admin",
                 Username = "admin",
             });
@@ -125,14 +125,54 @@ namespace TradianBackend.Controllers {
             });
 
             _dbcontext.Posts.Add(new Database.Entities.Post() {
-                Body        = System.IO.File.ReadAllText("Posts/post8.md", fileReadingEncoding),
-                Title       = "How to Make a Spaghetti Sandwich",
+                Body = System.IO.File.ReadAllText("Posts/post8.md", fileReadingEncoding),
+                Title = "How to Make a Spaghetti Sandwich",
                 Description = "A step-by-step guide on making a delicious spaghetti sandwich, perfect for repurposing leftover pasta. This article covers everything from ingredients and assembly to toasting techniques and creative variations, offering a unique twist on a comforting classic.",
-                IsSecured   = false
+                IsSecured = false
             });
 
             _dbcontext.SaveChanges();
             return Ok("Seed data injected");
+        }
+
+        [HttpGet("SeedPages")]
+        public IActionResult SeedPages() {
+            _dbcontext.Pages.ExecuteDelete();
+            _dbcontext.SaveChanges();
+            var fileReadingEncoding = System.Text.Encoding.ASCII;
+
+            _dbcontext.Pages.Add(new Database.Entities.Page() {
+                Image       = "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/7c5f9dfe-f9ce-4ffb-a255-46f04979aecf/uat4.jpg?t=1721637767",
+                SlugId      = "user_acceptance_testing_for_mnsw_begins",
+                Description = "The Maldives National Single Window (MNSW) has entered the User Acceptance Testing (UAT) phase, bringing it closer to streamlining trade processes. Stakeholders are testing the platform to ensure it meets requirements, paving the way for a more efficient and transparent trade ecosystem.",
+                Title       = "User Acceptance Testing for MNSW Begins",
+                Body        = System.IO.File.ReadAllText("Posts/page1.md", fileReadingEncoding),
+                Type        = Database.Entities.PageType.NewsPost,
+                PostedDate  = DateTime.UtcNow
+            });
+
+            _dbcontext.Pages.Add(new Database.Entities.Page() {
+                Image       = "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/9e45f61b-4549-4d83-bab7-b4cee6613e67/frank-mckenna-tjX_sniNzgQ-unsplash.jpg?t=1725287349",
+                SlugId      = "the_need_for_the_mnsw_system",
+                Description = "The Maldives National Single Window (MNSW) has entered the User Acceptance Testing (UAT) phase, bringing it closer to streamlining trade processes. Stakeholders are testing the platform to ensure it meets requirements, paving the way for a more efficient and transparent trade ecosystem.",
+                Title       = "The Need for the MNSW System",
+                Body        = System.IO.File.ReadAllText("Posts/page2.md", fileReadingEncoding),
+                Type        = Database.Entities.PageType.NewsPost,
+                PostedDate  = DateTime.UtcNow
+            });
+
+            _dbcontext.Pages.Add(new Database.Entities.Page() {
+                Image       = "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/88fc77f6-aec5-49df-89a7-83fe0679e972/GWIvMWmW4AAmpTM.jpg?t=1725287775",
+                SlugId      = "extensive_preparations_and_activities_pave_the_way_for_rollout_of_mnsw",
+                Description = "The MNSW system addresses border inefficiencies by consolidating trade transactions into a unified platform. This modernization aims to simplify procedures, reduce processing times, and lower costs, fostering a more efficient cross-border trade environment",
+                Title       = "Extensive Preparations and Activities Pave the Way for Rollout of MNSW",
+                Body        = System.IO.File.ReadAllText("Posts/page2.md", fileReadingEncoding),
+                Type        = Database.Entities.PageType.NewsPost,
+                PostedDate  = DateTime.UtcNow
+            });
+
+            _dbcontext.SaveChanges();
+            return Ok("Done");
         }
     }
 }

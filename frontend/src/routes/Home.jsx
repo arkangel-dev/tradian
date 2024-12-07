@@ -4,8 +4,9 @@ import Header from '../assets/Header'
 import Button from '../assets/Button'
 import Footer from '../assets/Footer'
 import SearchContainer from '../components/SearchContainer'
-import PostListView from './PostListView.jsx'
+import PostListView from './posts/PostListView.jsx'
 import toast from 'react-hot-toast';
+import NewsListView from './news/NewsListView.jsx'
 
 function Home() {
     return(
@@ -28,8 +29,10 @@ function Home() {
         </div>
   
         <div className='mt-[12rem]'></div>
+        <h1 className='text-center mb-10 text-6xl font-semibold text-[--deep-purple]'>Guides</h1>
         <PostListView/>
-  
+        <h1 className='text-center mb-10 text-6xl font-semibold text-[--deep-purple]'>News</h1>
+        <NewsListView/>
       </>
     )
 }

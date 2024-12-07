@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../assets/Footer";
-import Header from "../assets/Header";
+import Footer from "../../assets/Footer";
+import Header from "../../assets/Header";
 import axios from "axios";
 import Markdown from "react-markdown";
 import toast from "react-hot-toast";
-import './PostListView.css'
+import './NewsListView.css'
 import { SquareUnlock01Icon, Cancel01Icon, ArrowUpRight01Icon } from "hugeicons-react";
-import ScrollInFromSide from "../components/ScrollInFromSide"
+import ScrollInFromSide from "../../components/ScrollInFromSide"
 
 export default function PostView() {
 
@@ -42,7 +42,7 @@ export default function PostView() {
 
     const performSearch = () => {
         axios
-            .get(`/api/posts?query=${currentSearchQueryStore}&count=${count}`)
+            .get(`/api/content/news?query=${currentSearchQueryStore}&count=${count}`)
             .then((response) => {
                 setData(response.data);
                 setLoading(false)
@@ -62,7 +62,7 @@ export default function PostView() {
                     <input
                         value={searchQuery}
                         onChange={(e) => handleInputChange(e.target.value)}
-                        type="text" placeholder="Search for a post" />
+                        type="text" placeholder="Search for a news post" />
                     <button onClick={() => handleInputChange('')}>
                         <Cancel01Icon size={"1.25rem"} />
                     </button>
@@ -71,19 +71,15 @@ export default function PostView() {
                     {!loading &&
                         <>
                             {data.results.map((item) => (
-                                <ScrollInFromSide key={item.id}>
-                                    <a href={`posts/${item.id}`}>
-                                        <div className="PostListItem">
+                                <ScrollInFromSide key={item.slugId}>
+                                    <a href={`/news/${item.slugId}`}>
+                                        <div className="NewsListItem">
+                                            <img src={item.image} />
                                             <h1>{item.title}</h1>
-                                            {item.isSecured &&
-                                                <p className="post-tag">
-                                                    <SquareUnlock01Icon />
-                                                    Secret Membership Post
-                                                </p>
-                                            }
                                             <p>{item.description}</p>
                                             <div className="flex-1"></div>
-                                            <p className="flex gap-2"><span className="underline underline-offset-1">Read the post</span><ArrowUpRight01Icon/></p>
+                                            <p className="flex gap-2"><span className="underline underline-offset-1">Read the post</span><ArrowUpRight01Icon /></p>
+
                                         </div>
                                     </a>
                                 </ScrollInFromSide>

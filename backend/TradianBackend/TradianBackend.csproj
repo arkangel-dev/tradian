@@ -24,10 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Posts\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Posts\post1.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

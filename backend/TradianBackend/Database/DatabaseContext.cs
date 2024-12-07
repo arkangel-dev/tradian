@@ -8,6 +8,7 @@ namespace TradianBackend.Database {
         public DbSet<Entities.FooterSection> FooterSections { get; set; }
         public DbSet<Entities.Declaration> Declarations { get; set; }
         public DbSet<Entities.Login> Logins { get; set; }
+        public DbSet<Entities.Page> Pages { get; set; }
 
 
 

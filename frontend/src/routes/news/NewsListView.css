@@ -1,0 +1,85 @@
+.PostListContainer {
+    max-width: var(--container-width);
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.PostListRoot {
+    margin-bottom: 5rem;
+    gap: 2rem;
+}
+
+.NewsListItem {
+    background: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-width: 30rem;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @apply shadow-lg p-8;
+}
+
+.NewsListItem img {
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+}
+
+
+.NewsListItem:hover {
+    transform: scale(1.015);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.NewsListItem h1 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--deep-purple);
+    @apply text-2xl md:text-3xl hover:underline underline-offset-2
+}
+
+.NewsListItem p {
+    margin-top: .75rem;
+    color: rgb(66, 66, 66);
+    font-size: .9rem;
+}
+
+p.post-tag{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    margin-top: .5rem;
+    color: rgb(165, 165, 165);
+}
+
+.searchBox {
+    background: white;
+    
+    @apply flex items-center text-gray-800 px-6 py-3 rounded-full outline outline-[#f3f3f3] outline-2
+}
+
+.searchBox input {
+    background: none;
+}
+
+.searchBox input:focus {
+    outline: none;
+}
+
+.searchBox svg {
+    opacity: 0;
+    transition: opacity .25s linear;
+}
+
+.searchBox:hover svg {
+    opacity: 1;
+}
+
+.searchBox:has(> input:focus) svg {
+    opacity: 1;
+}
