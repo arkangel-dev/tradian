@@ -60,7 +60,7 @@ function Header() {
                     </div>
                     <div className="buttons">
                         <a onClick={() => toast.error("This leads to nowhere")}>Business</a>
-                        <a href='./Posts'>Posts</a>
+                        <a href='/Posts'>Posts</a>
                         <a onClick={() => toast.error("No support!")}>Support</a>
                     </div>
                     <div className="login">
