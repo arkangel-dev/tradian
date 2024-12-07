@@ -5,16 +5,16 @@ using TradianBackend.Database;
 namespace TradianBackend.Controllers {
     [ApiController]
     [Route("api/[controller]")]
-    public class DevController : ControllerBase {
+    public class SeedingController : ControllerBase {
 
         private readonly IConfiguration _configuration;
         private readonly DatabaseContext _dbcontext;
-        public DevController(IConfiguration configuration, DatabaseContext dbcontext) {
+        public SeedingController(IConfiguration configuration, DatabaseContext dbcontext) {
             _configuration = configuration;
             _dbcontext = dbcontext;
         }
 
-        [HttpPost("SeedFooterValues")]
+        [HttpGet("SeedFooterValues")]
         public IActionResult SeetFooterLinks() {
             _dbcontext.FooterLinks.ExecuteDelete();
             _dbcontext.FooterSections.ExecuteDelete();
@@ -49,7 +49,7 @@ namespace TradianBackend.Controllers {
             return Ok("Seed data injected");
         }
 
-        [HttpPost("SeedPostsValues")]
+        [HttpGet("SeedPostsValues")]
         public IActionResult SeedPosts() {
             _dbcontext.Posts.ExecuteDelete();
             _dbcontext.SaveChanges();
