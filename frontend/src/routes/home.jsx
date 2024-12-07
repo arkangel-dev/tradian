@@ -4,7 +4,7 @@ import Header from '../assets/Header.jsx'
 import Button from '../assets/Button.jsx'
 import Footer from '../assets/Footer.jsx'
 import SearchContainer from '../components/SearchContainer.jsx'
-import PostListView from './postsd/PostListView.jsx'
+import PostListView from './posts/PostListView.jsx'
 import toast from 'react-hot-toast';
 import NewsListView from './news/NewsListView.jsx'
 
