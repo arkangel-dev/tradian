@@ -6,7 +6,7 @@ import { createRoot } from 'react-dom/client';
 import Home from './routes/home.jsx';
 import Secrets from './routes/Secrets.jsx';
 
-import PostView from './routes/posts/PostView.jsx';
+import PostView from './routes/Posts/PostView.jsx';
 import PostListView from './routes/posts/PostListView.jsx'
 
 import NewsListView from './routes/news/NewsListView.jsx'

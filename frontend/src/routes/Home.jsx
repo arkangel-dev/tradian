@@ -1,9 +1,9 @@
-import './Home.css'
+import './home.css'
 import { Toaster } from 'react-hot-toast';
-import Header from '../assets/Header'
-import Button from '../assets/Button'
-import Footer from '../assets/Footer'
-import SearchContainer from '../components/SearchContainer'
+import Header from '../assets/Header.jsx'
+import Button from '../assets/Button.jsx'
+import Footer from '../assets/Footer.jsx'
+import SearchContainer from '../components/SearchContainer.jsx'
 import PostListView from './posts/PostListView.jsx'
 import toast from 'react-hot-toast';
 import NewsListView from './news/NewsListView.jsx'
