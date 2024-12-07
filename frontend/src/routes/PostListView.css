@@ -1,13 +1,16 @@
 .PostListContainer {
     max-width: var(--container-width);
     align-self: center;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
     justify-content: center;
+}
+
+.PostListRoot {
+    margin-bottom: 5rem;
+    gap: 2rem;
 }
 
 .PostListItem {
@@ -38,6 +41,7 @@
 }
 
 .PostListItem p {
+    margin-top: .75rem;
     color: rgb(66, 66, 66);
     font-size: .9rem;
 }
@@ -47,7 +51,6 @@ p.post-tag{
     gap: .5rem;
     align-items: center;
     margin-top: .5rem;
-    margin-bottom: .75rem;
     color: rgb(165, 165, 165);
 }
 
@@ -63,4 +66,17 @@ p.post-tag{
 
 .searchBox input:focus {
     outline: none;
+}
+
+.searchBox svg {
+    opacity: 0;
+    transition: opacity .25s linear;
+}
+
+.searchBox:hover svg {
+    opacity: 1;
+}
+
+.searchBox:has(> input:focus) svg {
+    opacity: 1;
 }

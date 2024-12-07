@@ -1,0 +1,12 @@
+.NotFound {
+    flex: 1 1 auto;
+    @apply flex flex-col items-center gap-2 justify-center
+}
+
+.NotFound h1 {
+    @apply text-3xl
+}
+
+.NotFound p {
+    @apply text-gray-500
+}

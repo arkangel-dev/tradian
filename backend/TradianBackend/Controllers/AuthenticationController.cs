@@ -35,9 +35,9 @@ namespace TradianBackend.Controllers {
             // Set token in a HttpOnly cookie
             Response.Cookies.Append("AuthToken", token, new CookieOptions {
                 HttpOnly = true,
-                Secure = true,
+                Secure   = true,
                 SameSite = SameSiteMode.Strict,
-                Expires = DateTime.UtcNow.AddMinutes(60)
+                Expires  = DateTime.UtcNow.AddMinutes(60)
             });
 
             return Ok(new { Message = "Login successful" });

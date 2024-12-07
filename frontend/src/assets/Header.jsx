@@ -2,6 +2,7 @@ import './Header.css'
 import Lottie from 'react-lottie'
 import animationData from './tradian-logo-dark.json'
 import toast from 'react-hot-toast';
+import { ArrowDown01Icon } from 'hugeicons-react';
 
 function Header() {
     const defaultOptions = {

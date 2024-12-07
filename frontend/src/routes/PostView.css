@@ -1,11 +1,11 @@
 :root {
-    --post-title-color: #c22222;
+    --post-title-color: var(--deep-purple);
 }
 
 h1.PostTitle {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #c22222;
+    color: var(--deep-purple);
     margin-bottom: 1rem;
 }
 
@@ -64,7 +64,7 @@ h1.PostTitle {
 
 .PostContent blockquote {
     margin-top: .5rem;
-    border-left: solid .35rem #c22222cc;
+    border-left: solid .35rem var(--deep-purple);
     padding-left: 1rem;
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -73,6 +73,6 @@ h1.PostTitle {
 .PostContent blockquote p {
     margin-top: 0px;
     font-style: italic;
-    color: #c22222a4;
+    color: var(--deep-purple);
     font-weight: 400;
 }

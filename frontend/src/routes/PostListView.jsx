@@ -15,6 +15,7 @@ export default function PostView() {
     const [errorMessage, setErrorMessage] = useState(false);
     const [searchQuery, setSearchQuery] = useState('')
     const [timer, setTimer] = useState(null);
+    const [displayLoadMore, setDisplayLoadMore] = useState(false)
 
     useEffect(() => {
         document.title = "Tradian Posts"
@@ -33,31 +34,33 @@ export default function PostView() {
         currentSearchQueryStore = value;
     }
 
-    // useEffect(() => {
-    //     return () => {
-    //         if (timer) {
-    //             clearTimeout(timer);
-    //         }
-    //     };
-    // }, [timer]);
+    const [count, setCount] = useState(3);
+
+    const loadMore = () => {
+        setCount(count + 3)
+    }
 
     const performSearch = () => {
         axios
-        .get(`https://localhost:7094/Posts?query=${currentSearchQueryStore}`)
-        .then((response) => {
-            setData(response.data);
-            setLoading(false)
-        });
+            .get(`https://localhost:7094/Posts?query=${currentSearchQueryStore}&count=${count}`)
+            .then((response) => {
+                console.log(response.data)
+                setData(response.data);
+                setLoading(false)
+                setDisplayLoadMore(count <= response.data.count)
+            });
     }
+    
+    useEffect(performSearch, [count])
 
     return (
         <>
-            <div className="r-container">
+            <div className="r-container PostListRoot">
                 <div className="searchBox">
                     <input
                         value={searchQuery}
                         onChange={(e) => handleInputChange(e.target.value)}
-                        type="text" placeholder="Search for a post..." />
+                        type="text" placeholder="Search for a post" />
                     <button onClick={() => handleInputChange('')}>
                         <Cancel01Icon size={"1.25rem"} />
                     </button>
@@ -65,7 +68,7 @@ export default function PostView() {
                 <div className="PostListContainer">
                     {!loading &&
                         <>
-                            {data.map((item) => (
+                            {data.results.map((item) => (
                                 <ScrollInFromSide key={item.id}>
                                     <div className="PostListItem">
                                         <a href={`posts/${item.id}`}><h1>{item.title}</h1></a>
@@ -82,6 +85,9 @@ export default function PostView() {
                         </>
                     }
                 </div>
+                {displayLoadMore &&
+                    <button onClick={loadMore}>Load More</button>
+                }
             </div>
         </>
     );

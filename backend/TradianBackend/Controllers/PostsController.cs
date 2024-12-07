@@ -17,7 +17,10 @@ namespace TradianBackend.Controllers {
         [HttpGet]
         public IActionResult GetAvailablePosts(
             [FromQuery(Name = "query")]
-            string? SearchQuery = null
+            string? SearchQuery = null,
+
+            [FromQuery(Name = "count")]
+            int count = 3
         ) {
             var content = _dbcontext
                 .Posts
@@ -37,15 +40,18 @@ namespace TradianBackend.Controllers {
             //if (!HttpContext.User.Identity?.IsAuthenticated ?? false)
             //    content = content.Where(x => !x.IsSecured);
 
-            var results = content.Select(x => new { x.Id, x.Title, x.Description, x.IsSecured });
-            return Ok(results);
+            var results = content.Select(x => new { x.Id, x.Title, x.Description, x.IsSecured }).Take(count);
+            return Ok(new {
+                Count = content.Count(),
+                Results = results
+            });
         }
 
         [HttpGet("{PostId}")]
         public IActionResult Post(Guid PostId) {
             var post = _dbcontext.Posts.Find(PostId);
             if (post is null) return NotFound();
-            if (post.IsSecured && (HttpContext.User.Identity?.IsAuthenticated ?? false)) return StatusCode(401);
+            if (post.IsSecured && !(HttpContext.User.Identity?.IsAuthenticated ?? false)) return StatusCode(401);
             return Ok(post);
         }
     }
